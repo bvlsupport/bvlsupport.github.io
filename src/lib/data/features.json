@@ -1,4 +1,9 @@
 {
+  "$schema": "./features.schema.json",
+  "theme": {
+    "default": "dark",
+    "options": ["dark", "light"]
+  },
   "sections": [
     { "id": "tools", "label": "Tools", "icon": "tool" },
     { "id": "tests", "label": "Tests", "icon": "chart" },

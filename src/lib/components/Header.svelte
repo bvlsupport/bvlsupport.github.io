@@ -1,18 +1,28 @@
 <script>
   import { onMount } from 'svelte';
+  import featuresData from '$lib/data/features.json';
+  import { normalizeThemeConfig } from '$lib/data/features-config.js';
 
   let mobileOpen = false;
   let theme = 'dark';
+  const themeConfig = normalizeThemeConfig(featuresData);
+  const themeOptions = themeConfig.options;
 
   onMount(() => {
-    theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const stored = localStorage.getItem('theme');
+    const current = document.documentElement.getAttribute('data-theme');
+    theme = stored || current || themeConfig.defaultTheme;
+    if (!themeOptions.includes(theme)) theme = themeConfig.defaultTheme;
+    document.documentElement.setAttribute('data-theme', theme);
   });
 
   function toggleMenu() { mobileOpen = !mobileOpen; }
   function closeMenu() { mobileOpen = false; }
 
   function toggleTheme() {
-    theme = theme === 'dark' ? 'light' : 'dark';
+    const i = themeOptions.indexOf(theme);
+    const next = i >= 0 ? themeOptions[(i + 1) % themeOptions.length] : themeConfig.defaultTheme;
+    theme = next;
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }
@@ -33,17 +43,23 @@
       <button
         class="theme-icon-btn"
         type="button"
-        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+        aria-label="Switch theme"
+        title={`Theme: ${theme}`}
         on:click={toggleTheme}
       >
-        {#if theme === 'dark'}
+        {#if theme === 'light'}
           <svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
           </svg>
-        {:else}
+        {:else if theme === 'dark'}
           <svg viewBox="0 0 24 24" class="theme-icon" fill="currentColor" aria-hidden="true">
             <path d="M20.354 15.354A9 9 0 018.646 3.646 9 9 0 1012 21a8.96 8.96 0 008.354-5.646z"></path>
+          </svg>
+        {:else}
+          <svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a7.97 7.97 0 0 0 .1-1 8 8 0 0 0-.1-1l2.1-1.6-2-3.4-2.5 1a8.27 8.27 0 0 0-1.7-1L15 4h-6l-.3 2.9a8.27 8.27 0 0 0-1.7 1l-2.5-1-2 3.4 2.1 1.6a7.97 7.97 0 0 0-.1 1 8 8 0 0 0 .1 1L2.5 16.6l2 3.4 2.5-1a8.27 8.27 0 0 0 1.7 1L9 22h6l.3-2.9a8.27 8.27 0 0 0 1.7-1l2.5 1 2-3.4z"></path>
           </svg>
         {/if}
       </button>

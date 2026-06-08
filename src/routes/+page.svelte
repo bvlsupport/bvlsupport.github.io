@@ -1,7 +1,8 @@
 <script>
   import featuresData from '../lib/data/features.json';
+  import Icon from '@iconify/svelte';
   import Search from '../lib/components/Search.svelte';
-  import { ICON_PATHS, normalizeFeaturesConfig } from '../lib/data/features-config.js';
+  import { normalizeFeaturesConfig, resolveIconName } from '../lib/data/features-config.js';
 
   const { sections, items } = normalizeFeaturesConfig(featuresData);
   let activeSection = sections[0]?.id || '';
@@ -24,9 +25,6 @@
     searchQuery = e.detail;
   }
 
-  function iconPath(key) {
-    return ICON_PATHS[key] || ICON_PATHS.tool;
-  }
 </script>
 
 <svelte:head>
@@ -52,9 +50,7 @@
           class:active={activeSection === sec.id}
           on:click={() => activeSection = sec.id}
         >
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d={iconPath(sec.icon)}/>
-          </svg>
+          <Icon icon={resolveIconName(sec.icon)} width="18" height="18" />
           {sec.label}
         </button>
       {/each}
@@ -88,9 +84,7 @@
           >
             <div class="card-header-row">
               <div class="card-icon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d={iconPath(item.icon)}/>
-                </svg>
+                <Icon icon={resolveIconName(item.icon)} width="22" height="22" />
               </div>
               {#if item.status !== 'published'}
                 <span class="badge-coming">Soon</span>
