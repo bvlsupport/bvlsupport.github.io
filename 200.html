@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/icons/192.png" />
+    <link rel="apple-touch-icon" href="/icons/192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link href="/_app/immutable/entry/start.DCCDpLSW.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/4pojvIUs.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/BagSz59_.js" rel="modulepreload">
+		<link href="/_app/immutable/entry/app._9MxXiSs.js" rel="modulepreload">
+		<link href="/_app/immutable/chunks/DavTBl_7.js" rel="modulepreload">
+		<link href="/_app/immutable/nodes/0.RVjEqC82.js" rel="modulepreload">
+		
+		<link href="/_app/immutable/assets/0.D9_NsRVh.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-prerender>
+    <div style="display: contents">
+			<script>
+				{
+					
+					__sveltekit_bikcov = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.DCCDpLSW.js"),
+						import("/_app/immutable/entry/app._9MxXiSs.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
