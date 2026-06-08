@@ -1,17 +1,12 @@
-<script context="module">
-  export const prerender = true;
-  export const trailingSlash = 'always';
-</script>
-
 <script>
   import '../app.css';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<div class="app-shell">
+<div class=app-shell>
   <Header />
-  <main class="main-content">
+  <main class=main-content>
     <slot />
   </main>
   <Footer />

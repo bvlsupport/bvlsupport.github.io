@@ -3,45 +3,25 @@
     "id": "trigger2marker",
     "name": "TRIGGER2MARKER",
     "description": "Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers. Simulates Digital Port Settings behavior.",
-    "tags": [
-      "trigger",
-      "marker",
-      "decoder",
-      "actiCHamp",
-      "digital port"
-    ],
+    "tags": ["trigger", "marker", "decoder", "actiCHamp", "digital port"],
     "repo": "birajstha/trigger2marker",
     "status": "published",
     "icon": "activity"
   },
   {
-    "id": "eegqc",
-    "name": "EEG Quality Control",
-    "description": "Automated EEG quality assessment pipeline \u2014 detects artifacts, noise, and bad channels using MNE and autoreject.",
-    "tags": [
-      "eeg",
-      "quality",
-      "artifacts",
-      "mne",
-      "autoreject"
-    ],
-    "repo": "birajstha/EEGQC",
-    "status": "coming-soon",
-    "icon": "brain"
-  },
-  {
-    "id": "bvef2lsl",
-    "name": "BVEF2LSL Config",
-    "description": "Convert BrainVision Electrode Files to Lab Streaming Layer configurations for real-time EEG streaming.",
-    "tags": [
-      "lsl",
-      "bvef",
-      "eeg",
-      "streaming",
-      "brainvision"
-    ],
-    "repo": "birajstha/BVEF2lslconfig",
+    "id": "tone-generator",
+    "name": "Tone Generator",
+    "description": "Generate pulsed tones and binaural beats for EEG auditory stimulation paradigms. Adjust frequency, pulse rate, duty cycle, and waveform.",
+    "tags": ["audio", "tone", "binaural", "auditory", "stimulation"],
     "status": "coming-soon",
     "icon": "zap"
+  },
+  {
+    "id": "screen-flicker",
+    "name": "Screen Flicker (SSVEP)",
+    "description": "Generate screen flicker stimuli for SSVEP experiments. Adjustable frequency, pattern, and contrast for visual evoked potentials.",
+    "tags": ["ssvep", "flicker", "visual", "stimulation", "eeg"],
+    "status": "coming-soon",
+    "icon": "brain"
   }
 ]

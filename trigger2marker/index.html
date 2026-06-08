@@ -1,14 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRIGGER2MARKER — BVL Support</title>
-    <link rel="icon" type="image/svg+xml" href="/trigger2marker/vite.svg" />
-    <script type="module" crossorigin src="/trigger2marker/assets/index-DmY3_9cq.js"></script>
-    <link rel="stylesheet" crossorigin href="/trigger2marker/assets/index-KR-bkz2T.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/icons/192.png" />
+    <link rel="apple-touch-icon" href="/icons/192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link href="../_app/immutable/entry/start.DndpmnQo.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CZTsQE3e.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/_gl7O9Lq.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.KqugmdoU.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/aj43JTTg.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.1o7Sdr7h.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/4.D5blM1Rr.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DRauQDqO.js" rel="modulepreload">
+		<title>TRIGGER2MARKER — BVL Support</title><!-- HEAD_svelte-szdlmq_START --><meta name="description" content="Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers."><!-- HEAD_svelte-szdlmq_END -->
+		<link href="../_app/immutable/assets/0.SRFGweYi.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/4.BzrvXHxE.css" rel="stylesheet">
   </head>
-  <body>
-    <div id="app"></div>
+  <body data-sveltekit-prerender>
+    <div style="display: contents">  <div class="app-shell svelte-19iku2n"><header class="header svelte-170vook"><div class="container header-inner svelte-170vook"><a href="/" class="logo svelte-170vook" data-svelte-h="svelte-1qfqqq0"><img src="/BV-Logo.png" alt="BVL Support" class="logo-icon svelte-170vook"></a> <nav class="nav-desktop svelte-170vook"><a href="/" class="nav-link active svelte-170vook" data-svelte-h="svelte-fg7r7l">Home</a> <a href="/about" class="nav-link svelte-170vook" data-svelte-h="svelte-ig2oyg">About</a> <button class="theme-icon-btn svelte-170vook" type="button" aria-label="Switch to light mode"><svg viewBox="0 0 24 24" class="theme-icon svelte-170vook" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button></nav> <button class="menu-btn svelte-170vook" aria-label="Menu" aria-expanded="false"><span class="menu-bar svelte-170vook"></span> <span class="menu-bar svelte-170vook"></span> <span class="menu-bar svelte-170vook"></span></button></div></header>   <main class="main-content svelte-19iku2n"> <div class="page svelte-zuhl46"><div class="page-header svelte-zuhl46" data-svelte-h="svelte-wh5kkl"><h1 class="page-title svelte-zuhl46">TRIGGER2MARKER</h1> <p class="page-desc svelte-zuhl46">Interactive tool to display the mapping between 8-bit trigger codes and markers
+      for different Digital Port Settings (actiCHamp amplifier family).</p></div> <div class="info-box svelte-zuhl46" data-svelte-h="svelte-rchtul"><p>TRIGGER2MARKER simulates the decoding behavior of the Digital Port Settings to identify
+      the set of trigger codes/markers that have a one-to-one mapping. To learn more, see our Support Tip
+      <a href="https://pressrelease.brainproducts.com/trigger-code-design/" target="_blank" rel="noopener" class="svelte-zuhl46">&quot;How to design trigger codes to obtain accurate markers&quot;</a>
+      and related resources at
+      <a href="https://www.brainproducts.com/support-resources/" target="_blank" rel="noopener" class="svelte-zuhl46">Brain Products Support Resources</a>.</p></div> <div class="decoder-layout svelte-zuhl46"><div class="decoder-sidebar"><h5 class="section-label svelte-zuhl46" data-svelte-h="svelte-hk5tgx">Digital Port Settings</h5> <form><div class="table-wrap svelte-1y3cdvh"><table class="bit-table svelte-1y3cdvh"><thead data-svelte-h="svelte-1hhfqke"><tr><th class="svelte-1y3cdvh">Bit</th> <th class="svelte-1y3cdvh">Enabled</th> <th class="svelte-1y3cdvh">Type</th></tr></thead> <tbody><tr><td class="bit-label svelte-1y3cdvh">0</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">1</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">2</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">3</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">4</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">5</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">6</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr><tr><td class="bit-label svelte-1y3cdvh">7</td> <td class="chk-cell svelte-1y3cdvh"><input type="checkbox" checked></td> <td class="svelte-1y3cdvh"><input type="text" class="type-input svelte-1y3cdvh" value="Event"></td> </tr></tbody></table></div> <div class="opt-row svelte-1y3cdvh"><label class="fulltype-label svelte-1y3cdvh"><input type="checkbox"> <span data-svelte-h="svelte-1b4rhx9">Use full type name as marker label</span></label></div> <div class="action-row svelte-1y3cdvh"><button type="submit" class="btn-primary svelte-1y3cdvh" data-svelte-h="svelte-1cfr5y6">Update</button> <select value="All Event" class="preset-select svelte-1y3cdvh"><option value="All Event" data-svelte-h="svelte-1ep6y44">All Event</option><option value="Default" data-svelte-h="svelte-1c828u0">Default</option></select></div> </form></div> <div class="decoder-main"></div></div>  </div></main> <footer class="footer svelte-1h7yf01"><div class="container footer-inner svelte-1h7yf01"><div class="footer-brand" data-svelte-h="svelte-110l6nz"><p class="footer-title svelte-1h7yf01">BVL Support</p> <p class="footer-desc svelte-1h7yf01">Brain Vision Support Portal — tools and resources for EEG researchers.</p></div> <div class="footer-links svelte-1h7yf01" data-svelte-h="svelte-u9trre"><a href="https://www.brainproducts.com/support-resources/" target="_blank" rel="noopener" class="svelte-1h7yf01">Support Resources</a> <a href="/about" class="svelte-1h7yf01">About</a></div> <p class="footer-copy svelte-1h7yf01">© 2026 BVL Support. All rights reserved.</p></div> </footer> </div> 
+			
+			<script>
+				{
+					
+					__sveltekit_8962f1 = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.DndpmnQo.js"),
+						import("../_app/immutable/entry/app.KqugmdoU.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>
