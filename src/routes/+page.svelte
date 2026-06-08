@@ -1,15 +1,32 @@
 <script>
-  import features from '../lib/data/features.json';
+  import featuresData from '../lib/data/features.json';
+  import Search from '../lib/components/Search.svelte';
+  import { ICON_PATHS, normalizeFeaturesConfig } from '../lib/data/features-config.js';
 
-  const sections = [
-    { id: 'tools', label: 'Tools', icon: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
-    { id: 'tests', label: 'Tests', icon: 'M18 20V10M12 20V4M6 20v-6' },
-    { id: 'texts', label: 'Texts', icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M16 13H8 M16 17H8 M10 9H8' },
-  ];
+  const { sections, items } = normalizeFeaturesConfig(featuresData);
+  let activeSection = sections[0]?.id || '';
+  let searchQuery = '';
 
-  let activeSection = 'tools';
+  $: sectionItems = items.filter((f) => {
+    const inSection = f.section === activeSection;
+    if (!inSection) return false;
+    if (!searchQuery.trim()) return true;
 
-  $: sectionItems = features.filter(f => f.section === activeSection);
+    const q = searchQuery.toLowerCase();
+    return (
+      f.name.toLowerCase().includes(q) ||
+      f.description.toLowerCase().includes(q) ||
+      (f.tags || []).some((t) => t.toLowerCase().includes(q))
+    );
+  });
+
+  function handleSearch(e) {
+    searchQuery = e.detail;
+  }
+
+  function iconPath(key) {
+    return ICON_PATHS[key] || ICON_PATHS.tool;
+  }
 </script>
 
 <svelte:head>
@@ -36,12 +53,18 @@
           on:click={() => activeSection = sec.id}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d={sec.icon}/>
+            <path d={iconPath(sec.icon)}/>
           </svg>
           {sec.label}
         </button>
       {/each}
     </nav>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="container search-wrap">
+    <Search value={searchQuery} placeholder="Search in this section..." on:search={handleSearch} />
   </div>
 </section>
 
@@ -56,8 +79,8 @@
         {#each sectionItems as item (item.id)}
           <a
             href={item.url || '#'}
-            target={item.url && item.url.startsWith('http') ? '_blank' : '_self'}
-            rel={item.url && item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+            target={item.status === 'published' && item.newTab ? '_blank' : '_self'}
+            rel={item.status === 'published' && item.newTab ? 'noopener noreferrer' : undefined}
             class="card"
             class:disabled={item.status !== 'published'}
             tabindex={item.status === 'published' ? 0 : -1}
@@ -66,7 +89,7 @@
             <div class="card-header-row">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d={item.icon === 'activity' ? 'M22 12h-4l-3 9L9 3l-3 9H2' : item.icon === 'brain' ? 'M12 2C8 2 4 5 4 9c0 2.5 1.5 4.5 3 6l2 3h6l2-3c1.5-1.5 3-3.5 3-6 0-4-4-7-8-7z M12 2v20 M8 12h8' : item.icon === 'zap' ? 'M13 2L3 14h9l-1 8 10-12h-9l1-8z' : item.icon === 'tool' ? 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' : item.icon === 'chart' ? 'M18 20V10M12 20V4M6 20v-6' : ''}/>
+                  <path d={iconPath(item.icon)}/>
                 </svg>
               </div>
               {#if item.status !== 'published'}
@@ -161,6 +184,15 @@
     padding-bottom: 64px;
   }
 
+  .search-section {
+    padding: 0 0 20px;
+  }
+
+  .search-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
   .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -237,6 +269,7 @@
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.45;
+    line-clamp: 2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

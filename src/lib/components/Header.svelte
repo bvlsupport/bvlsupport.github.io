@@ -36,7 +36,6 @@
         aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         on:click={toggleTheme}
       >
-        <span class="theme-text">Theme</span>
         {#if theme === 'dark'}
           <svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4"></circle>
@@ -104,8 +103,9 @@
   }
 
   .theme-icon-btn {
+    width: 36px;
     height: 36px;
-    padding: 0 10px;
+    padding: 0;
     border-radius: 999px;
     border: 1px solid var(--border);
     background: var(--bg-secondary);
@@ -113,7 +113,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     transition: all var(--transition);
   }
   .theme-icon-btn:hover {
@@ -123,12 +122,6 @@
   .theme-icon {
     width: 18px;
     height: 18px;
-  }
-  .theme-text {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    color: var(--text-secondary);
   }
 
   .menu-bar {

@@ -1,40 +1,49 @@
-[
-  {
-    "id": "trigger2marker",
-    "name": "TRIGGER2MARKER",
-    "description": "Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers. Simulates Digital Port Settings behavior.",
-    "tags": ["trigger", "marker", "decoder", "actiCHamp"],
-    "url": "https://birajstha.github.io/trigger2marker/",
-    "section": "tools",
-    "status": "published",
-    "icon": "activity"
-  },
-  {
-    "id": "tone-generator",
-    "name": "Tone Generator",
-    "description": "Generate pulsed tones and binaural beats for EEG auditory stimulation paradigms.",
-    "tags": ["audio", "tone", "binaural", "auditory"],
-    "section": "tools",
-    "status": "coming-soon",
-    "icon": "zap"
-  },
-  {
-    "id": "screen-flicker",
-    "name": "Screen Flicker",
-    "description": "Generate screen flicker stimuli for SSVEP experiments.",
-    "tags": ["ssvep", "flicker", "visual", "stimulation"],
-    "section": "tools",
-    "status": "coming-soon",
-    "icon": "brain"
-  },
-  {
-    "id": "usb-powerbank-tests",
-    "name": "USB Battery Pack Tests",
-    "description": "Low-power load retention test results for USB battery packs used in portable EEG setups.",
-    "tags": ["battery", "usb", "test", "power"],
-    "url": "/USBPowerBankTests/",
-    "section": "tests",
-    "status": "published",
-    "icon": "chart"
-  }
-]
+{
+  "sections": [
+    { "id": "tools", "label": "Tools", "icon": "tool" },
+    { "id": "tests", "label": "Tests", "icon": "chart" },
+    { "id": "texts", "label": "Texts", "icon": "file" }
+  ],
+  "items": [
+    {
+      "id": "trigger2marker",
+      "name": "TRIGGER2MARKER",
+      "description": "Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers. Simulates Digital Port Settings behavior.",
+      "tags": ["trigger", "marker", "decoder", "actiCHamp"],
+      "url": "https://birajstha.github.io/trigger2marker/",
+      "section": "tools",
+      "status": "published",
+      "icon": "activity"
+    },
+    {
+      "id": "tone-generator",
+      "name": "Tone Generator",
+      "description": "Generate sine, square, sawtooth, or triangle wave tones with adjustable frequency, volume, and pulse mode for auditory testing.",
+      "tags": ["audio", "tone", "waveform", "pulse"],
+      "url": "https://birajstha.github.io/tone-generator/",
+      "section": "tools",
+      "status": "published",
+      "icon": "zap"
+    },
+    {
+      "id": "screen-flicker",
+      "name": "Screen Flicker",
+      "description": "Generate adjustable screen flicker stimuli at configurable frequencies with custom foreground/background colors.",
+      "tags": ["flicker", "visual", "stimulation", "frequency"],
+      "url": "https://birajstha.github.io/screen-flicker/",
+      "section": "tools",
+      "status": "published",
+      "icon": "monitor"
+    },
+    {
+      "id": "usb-powerbank-tests",
+      "name": "USB Battery Pack Tests",
+      "description": "Low-power load retention test results for USB battery packs used in portable EEG setups.",
+      "tags": ["battery", "usb", "test", "power"],
+      "url": "/USBPowerBankTests/",
+      "section": "tests",
+      "status": "published",
+      "icon": "chart"
+    }
+  ]
+}
