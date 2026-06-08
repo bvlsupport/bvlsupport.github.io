@@ -9,7 +9,7 @@ const config = {
       assets: 'dist'
     }),
     prerender: {
-      entries: ['/', '/about/', '/trigger2marker/']
+      entries: ['/', '/about/']
     }
   }
 };
