@@ -16,24 +16,93 @@
     <script type="module" crossorigin src="/trigger2marker/assets/index-DmY3_9cq.js"></script>
     <link rel="stylesheet" crossorigin href="/trigger2marker/assets/index-KR-bkz2T.css">
     <style>
+      :root {
+        --bg-primary: #060d14;
+        --bg-secondary: #0d1f2d;
+        --bg-card: #0f2a3d;
+        --text-primary: #e2e8f0;
+        --text-secondary: #8899aa;
+        --accent: #3a7bd5;
+        --accent-light: #5a9df5;
+        --border: #1a3a55;
+        --cell-border: #1a3a55;
+        --bit-bg: #1a3a55;
+        --bit-color: #8899aa;
+        --bit-on: #198754;
+      }
+
+      :root[data-theme='light'] {
+        --bg-primary: #f5f8fc;
+        --bg-secondary: #e8eef7;
+        --bg-card: #ffffff;
+        --text-primary: #0f1f31;
+        --text-secondary: #4f6278;
+        --accent: #2d6ec7;
+        --accent-light: #4a8be2;
+        --border: #c9d8ea;
+        --cell-border: #c9d8ea;
+        --bit-bg: #e8eef7;
+        --bit-color: #4f6278;
+        --bit-on: #1c9e4c;
+      }
+
       .nav-bar {
         display: flex; align-items: center; justify-content: space-between;
-        padding: 8px 16px; background: var(--bg-primary, #060d14);
-        border-bottom: 1px solid var(--border, #1a3a55);
+        padding: 8px 16px;
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--border);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
       .nav-bar a {
-        color: var(--accent, #3a7bd5); text-decoration: none; font-size: 0.85rem;
+        color: var(--accent); text-decoration: none; font-size: 0.85rem;
         display: flex; align-items: center; gap: 4px;
       }
-      .nav-bar a:hover { color: var(--accent-light, #5a9df5); }
+      .nav-bar a:hover { color: var(--accent-light); }
       .theme-btn {
-        background: none; border: 1px solid var(--border, #1a3a55);
+        background: none; border: 1px solid var(--border);
         border-radius: 999px; width: 32px; height: 32px;
         cursor: pointer; display: flex; align-items: center; justify-content: center;
-        color: var(--text-primary, #e2e8f0);
+        color: var(--text-primary);
       }
-      .theme-btn:hover { border-color: var(--accent, #3a7bd5); }
+      .theme-btn:hover { border-color: var(--accent); }
+
+      /* Override Svelte component styles for light theme */
+      :root[data-theme='light'] .cell {
+        border-color: #c9d8ea !important;
+      }
+      :root[data-theme='light'] .cell:hover {
+        box-shadow: inset 0 0 0 2px #4a8be2 !important;
+        background-color: rgba(45, 110, 199, 0.1) !important;
+      }
+      :root[data-theme='light'] .cell-valid {
+        background: rgba(28, 158, 76, 0.12) !important;
+      }
+      :root[data-theme='light'] .cell-valid:hover {
+        background: rgba(28, 158, 76, 0.25) !important;
+        box-shadow: inset 0 0 0 2px #1c9e4c !important;
+      }
+      :root[data-theme='light'] .cell-duplicate {
+        background: rgba(184, 133, 0, 0.12) !important;
+      }
+      :root[data-theme='light'] .cell-duplicate:hover {
+        background: rgba(184, 133, 0, 0.25) !important;
+        box-shadow: inset 0 0 0 2px #b88500 !important;
+      }
+      :root[data-theme='light'] .cell-selected {
+        background: #c9d8ea !important;
+        color: #0f1f31 !important;
+      }
+      :root[data-theme='light'] .bit {
+        background: #e8eef7 !important;
+        color: #4f6278 !important;
+      }
+      :root[data-theme='light'] .bit.on {
+        background: #1c9e4c !important;
+        color: #fff !important;
+      }
+      :root[data-theme='light'] h2.marker-type-heading {
+        color: #4f6278 !important;
+      }
     </style>
   </head>
   <body>
