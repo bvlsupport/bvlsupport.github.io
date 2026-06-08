@@ -27,6 +27,9 @@
     <nav class="nav-desktop">
       <a href="/" class="nav-link active">Home</a>
       <a href="/about" class="nav-link">About</a>
+    </nav>
+
+    <div class="header-actions">
       <button
         class="theme-icon-btn"
         type="button"
@@ -44,13 +47,13 @@
           </svg>
         {/if}
       </button>
-    </nav>
 
-    <button class="menu-btn" on:click={toggleMenu} aria-label="Menu" aria-expanded={mobileOpen}>
-      <span class="menu-bar" class:open={mobileOpen}></span>
-      <span class="menu-bar" class:open={mobileOpen}></span>
-      <span class="menu-bar" class:open={mobileOpen}></span>
-    </button>
+      <button class="menu-btn" on:click={toggleMenu} aria-label="Menu" aria-expanded={mobileOpen}>
+        <span class="menu-bar" class:open={mobileOpen}></span>
+        <span class="menu-bar" class:open={mobileOpen}></span>
+        <span class="menu-bar" class:open={mobileOpen}></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -61,24 +64,6 @@
     <nav class="mobile-nav" on:click|stopPropagation>
       <a href="/" class="mobile-link" on:click={closeMenu}>Home</a>
       <a href="/about" class="mobile-link" on:click={closeMenu}>About</a>
-      <button
-        class="theme-mobile-btn"
-        type="button"
-        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-        on:click={toggleTheme}
-      >
-        <span>Theme</span>
-        {#if theme === 'dark'}
-          <svg viewBox="0 0 24 24" class="theme-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-          </svg>
-        {:else}
-          <svg viewBox="0 0 24 24" class="theme-icon" fill="currentColor" aria-hidden="true">
-            <path d="M20.354 15.354A9 9 0 018.646 3.646 9 9 0 1012 21a8.96 8.96 0 008.354-5.646z"></path>
-          </svg>
-        {/if}
-      </button>
     </nav>
   </div>
 {/if}
@@ -102,6 +87,7 @@
   }
   .logo-icon { width: 120px; height: 48px; flex-shrink: 0; object-fit: contain; }
   .nav-desktop { display: flex; gap: 8px; align-items: center; }
+  .header-actions { display: flex; align-items: center; gap: 8px; }
   .nav-link {
     padding: 8px 16px; border-radius: var(--radius-sm);
     color: var(--text-secondary); font-weight: 500; font-size: 0.9rem;
@@ -165,21 +151,6 @@
     transition: background var(--transition);
   }
   .mobile-link:hover { background: var(--bg-hover); }
-  .theme-mobile-btn {
-    margin-top: 8px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 12px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--bg-hover);
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-
   @media (max-width: 640px) {
     .nav-desktop { display: none; }
     .menu-btn { display: flex; }
