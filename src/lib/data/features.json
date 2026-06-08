@@ -1,0 +1,47 @@
+[
+  {
+    "id": "trigger2marker",
+    "name": "TRIGGER2MARKER",
+    "description": "Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers. Simulates Digital Port Settings behavior.",
+    "tags": [
+      "trigger",
+      "marker",
+      "decoder",
+      "actiCHamp",
+      "digital port"
+    ],
+    "repo": "birajstha/trigger2marker",
+    "status": "published",
+    "icon": "activity"
+  },
+  {
+    "id": "eegqc",
+    "name": "EEG Quality Control",
+    "description": "Automated EEG quality assessment pipeline \u2014 detects artifacts, noise, and bad channels using MNE and autoreject.",
+    "tags": [
+      "eeg",
+      "quality",
+      "artifacts",
+      "mne",
+      "autoreject"
+    ],
+    "repo": "birajstha/EEGQC",
+    "status": "coming-soon",
+    "icon": "brain"
+  },
+  {
+    "id": "bvef2lsl",
+    "name": "BVEF2LSL Config",
+    "description": "Convert BrainVision Electrode Files to Lab Streaming Layer configurations for real-time EEG streaming.",
+    "tags": [
+      "lsl",
+      "bvef",
+      "eeg",
+      "streaming",
+      "brainvision"
+    ],
+    "repo": "birajstha/BVEF2lslconfig",
+    "status": "coming-soon",
+    "icon": "zap"
+  }
+]

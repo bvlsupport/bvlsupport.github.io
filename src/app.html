@@ -16,35 +16,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <link href="/_app/immutable/entry/start.iEhsbrQV.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/CwY9ItUx.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/mzgmJxI6.js" rel="modulepreload">
-		<link href="/_app/immutable/entry/app.CFsUPASq.js" rel="modulepreload">
-		<link href="/_app/immutable/chunks/96to3e9F.js" rel="modulepreload">
-		<link href="/_app/immutable/nodes/0.Cw4U-gCG.js" rel="modulepreload">
-		
-		<link href="/_app/immutable/assets/0.BX5OzK03.css" rel="stylesheet">
+    %sveltekit.head%
   </head>
   <body data-sveltekit-prerender>
-    <div style="display: contents">
-			<script>
-				{
-					
-					__sveltekit_r6lom1 = {
-						base: ""
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("/_app/immutable/entry/start.iEhsbrQV.js"),
-						import("/_app/immutable/entry/app.CFsUPASq.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element);
-					});
-				}
-			</script>
-		</div>
+    <div style="display: contents">%sveltekit.body%</div>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

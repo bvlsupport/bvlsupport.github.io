@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" fill="none">
+  <rect width="800" height="220" fill="#08131d"/>
+  <g opacity="0.18" stroke="#1f3b57" stroke-width="1">
+    <path d="M0 40H800"/>
+    <path d="M0 80H800"/>
+    <path d="M0 120H800"/>
+    <path d="M0 160H800"/>
+    <path d="M0 200H800"/>
+    <path d="M80 0V220"/>
+    <path d="M160 0V220"/>
+    <path d="M240 0V220"/>
+    <path d="M320 0V220"/>
+    <path d="M400 0V220"/>
+    <path d="M480 0V220"/>
+    <path d="M560 0V220"/>
+    <path d="M640 0V220"/>
+    <path d="M720 0V220"/>
+  </g>
+
+  <path d="M20 150H90V80H190V150H300V80H400V150H520V80H620V150H780"
+        stroke="#3a9cff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="90" cy="80" r="5" fill="#7dc4ff"/>
+  <circle cx="190" cy="80" r="5" fill="#7dc4ff"/>
+  <circle cx="300" cy="80" r="5" fill="#7dc4ff"/>
+  <circle cx="400" cy="80" r="5" fill="#7dc4ff"/>
+  <circle cx="520" cy="80" r="5" fill="#7dc4ff"/>
+  <circle cx="620" cy="80" r="5" fill="#7dc4ff"/>
+</svg>
