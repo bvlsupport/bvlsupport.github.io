@@ -9,7 +9,7 @@ const config = {
       assets: 'dist'
     }),
     prerender: {
-      entries: ['/', '/about/']
+      entries: ['/', '/about/', '/battery-voltage-plotter/']
     }
   }
 };

@@ -1,15 +1,32 @@
 {
   "sections": [
-    { "id": "tools", "label": "Tools", "icon": "tool" },
-    { "id": "tests", "label": "Tests", "icon": "chart" },
-    { "id": "texts", "label": "Texts", "icon": "file" }
+    {
+      "id": "tools",
+      "label": "Tools",
+      "icon": "tool"
+    },
+    {
+      "id": "tests",
+      "label": "Tests",
+      "icon": "chart"
+    },
+    {
+      "id": "texts",
+      "label": "Texts",
+      "icon": "file"
+    }
   ],
   "items": [
     {
       "id": "trigger2marker",
       "name": "TRIGGER2MARKER",
       "description": "Interactive tool to decode 8-bit trigger codes to markers for actiCHamp amplifiers. Simulates Digital Port Settings behavior.",
-      "tags": ["trigger", "marker", "decoder", "actiCHamp"],
+      "tags": [
+        "trigger",
+        "marker",
+        "decoder",
+        "actiCHamp"
+      ],
       "url": "https://birajstha.github.io/trigger2marker/",
       "section": "tools",
       "status": "published",
@@ -19,7 +36,12 @@
       "id": "tone-generator",
       "name": "Tone Generator",
       "description": "Generate sine, square, sawtooth, or triangle wave tones with adjustable frequency, volume, and pulse mode for auditory testing.",
-      "tags": ["audio", "tone", "waveform", "pulse"],
+      "tags": [
+        "audio",
+        "tone",
+        "waveform",
+        "pulse"
+      ],
       "url": "https://birajstha.github.io/tone-generator/",
       "section": "tools",
       "status": "published",
@@ -29,7 +51,12 @@
       "id": "screen-flicker",
       "name": "Screen Flicker",
       "description": "Generate adjustable screen flicker stimuli at configurable frequencies with custom foreground/background colors.",
-      "tags": ["flicker", "visual", "stimulation", "frequency"],
+      "tags": [
+        "flicker",
+        "visual",
+        "stimulation",
+        "frequency"
+      ],
       "url": "https://birajstha.github.io/screen-flicker/",
       "section": "tools",
       "status": "published",
@@ -39,11 +66,34 @@
       "id": "usb-powerbank-tests",
       "name": "USB Battery Pack Tests",
       "description": "Low-power load retention test results for USB battery packs used in portable EEG setups.",
-      "tags": ["battery", "usb", "test", "power"],
+      "tags": [
+        "battery",
+        "usb",
+        "test",
+        "power"
+      ],
       "url": "/USBPowerBankTests/",
       "section": "tests",
       "status": "published",
       "icon": "chart"
+    },
+    {
+      "id": "battery-voltage-plotter",
+      "name": "Battery Voltage Plotter",
+      "description": "Upload battery test logs to graph voltage channels over time, compare readings with the selected test cutoff, and export readings.",
+      "tags": [
+        "battery",
+        "voltage",
+        "plotter",
+        "ACH Plus",
+        "LA",
+        "BrainAmp"
+      ],
+      "url": "/battery-voltage-plotter/",
+      "section": "tests",
+      "status": "published",
+      "icon": "chart",
+      "newTab": false
     }
   ]
 }
