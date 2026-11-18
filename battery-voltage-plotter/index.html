@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="/icons/192.png" />
+    <link rel="apple-touch-icon" href="/icons/192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link href="../_app/immutable/entry/start.DIkyK-ua.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BTkMaIQZ.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BThnjZcu.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.DN3tOuzR.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/B6bNy9aR.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.DLd3cd6T.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/4.BJE_H1lt.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DJ56bqjX.js" rel="modulepreload">
+		<title>Battery Voltage Plotter — BVL Support</title><!-- HEAD_svelte-qluvuw_START --><meta name="description" content="Plot battery voltage log files for ACH Plus, LA, and BrainAmp Family tests."><!-- HEAD_svelte-qluvuw_END -->
+		<link href="../_app/immutable/assets/0.D9_NsRVh.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/4.DOq1JgBT.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-prerender>
+    <div style="display: contents">  <div class="app-shell svelte-19iku2n"><header class="header svelte-1tz1e47"><div class="container header-inner svelte-1tz1e47"><a href="/" class="logo svelte-1tz1e47" data-svelte-h="svelte-1qfqqq0"><img src="/BV-Logo.png" alt="BVL Support" class="logo-icon svelte-1tz1e47"></a> <nav class="nav-desktop svelte-1tz1e47" data-svelte-h="svelte-11d43xa"><a href="/" class="nav-link active svelte-1tz1e47">Home</a> <a href="/about" class="nav-link svelte-1tz1e47">About</a></nav> <div class="header-actions svelte-1tz1e47"><button class="theme-icon-btn svelte-1tz1e47" type="button" aria-label="Switch to light mode"><svg viewBox="0 0 24 24" class="theme-icon svelte-1tz1e47" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></button> <button class="menu-btn svelte-1tz1e47" aria-label="Menu" aria-expanded="false"><span class="menu-bar svelte-1tz1e47"></span> <span class="menu-bar svelte-1tz1e47"></span> <span class="menu-bar svelte-1tz1e47"></span></button></div></div></header>   <main class="main-content svelte-19iku2n"> <div class="container plotter-page svelte-1jo4ch6"><a class="back-link svelte-1jo4ch6" href="/" data-svelte-h="svelte-5mnl8u">← Back to Support Tools</a> <header class="page-heading svelte-1jo4ch6" data-svelte-h="svelte-d19ttu"><p class="eyebrow svelte-1jo4ch6">BATTERY TESTING</p> <h1 class="svelte-1jo4ch6">Battery Voltage Plotter</h1> <p class="svelte-1jo4ch6">Upload a log file to visualize voltage readings over time and compare each channel with its test cutoff.</p></header> <section class="panel setup-panel svelte-1jo4ch6"><div class="section-heading svelte-1jo4ch6" data-svelte-h="svelte-1ciqj1j"><div class="svelte-1jo4ch6"><span class="step svelte-1jo4ch6">01</span><h2 class="svelte-1jo4ch6">Select battery test</h2></div> <p class="svelte-1jo4ch6">The selected test determines the reference cutoff voltage.</p></div> <div class="test-options svelte-1jo4ch6"><label class="test-option svelte-1jo4ch6"><input type="radio" name="testType" value="ach-plus" class="svelte-1jo4ch6"> <span class="test-name svelte-1jo4ch6">ACH Plus</span> <strong class="svelte-1jo4ch6">5.5 V</strong> <span class="test-caption svelte-1jo4ch6" data-svelte-h="svelte-qmmgqs">Cutoff reference</span> </label><label class="test-option svelte-1jo4ch6"><input type="radio" name="testType" value="la" class="svelte-1jo4ch6"> <span class="test-name svelte-1jo4ch6">LA</span> <strong class="svelte-1jo4ch6">3.3 V</strong> <span class="test-caption svelte-1jo4ch6" data-svelte-h="svelte-qmmgqs">Cutoff reference</span> </label><label class="test-option svelte-1jo4ch6 selected"><input type="radio" name="testType" value="brainamp-family" class="svelte-1jo4ch6" checked> <span class="test-name svelte-1jo4ch6">BrainAmp Family</span> <strong class="svelte-1jo4ch6">5.2 V</strong> <span class="test-caption svelte-1jo4ch6" data-svelte-h="svelte-qmmgqs">Cutoff reference</span> </label></div> <div class="cutoff-note svelte-1jo4ch6">Reference line: <strong class="svelte-1jo4ch6">5.2 V</strong>. Reaching this voltage is a normal part of the battery test, not a pass/fail result.</div></section> <section class="panel upload-panel svelte-1jo4ch6"><div class="section-heading svelte-1jo4ch6" data-svelte-h="svelte-1c0k2jw"><div class="svelte-1jo4ch6"><span class="step svelte-1jo4ch6">02</span><h2 class="svelte-1jo4ch6">Upload log file</h2></div> <p class="svelte-1jo4ch6">Supported formats: .txt and .log</p></div> <label class="drop-zone svelte-1jo4ch6"><input type="file" accept=".txt,.log,text/plain" class="svelte-1jo4ch6"> <span class="upload-icon svelte-1jo4ch6" data-svelte-h="svelte-1k9i7a5">↑</span> <strong class="svelte-1jo4ch6" data-svelte-h="svelte-fhr1g0">Choose a log file</strong> <span class="svelte-1jo4ch6" data-svelte-h="svelte-1cmmjap">or drag a file here using your browser&#39;s file picker</span> <small class="svelte-1jo4ch6" data-svelte-h="svelte-b1cujs">File is read locally in your browser; it is not uploaded to a server.</small></label>  </section>  </div></main> <footer class="footer svelte-14ky0on"><div class="container footer-inner svelte-14ky0on"><p class="footer-copy">© 2026 BVL Support. All rights reserved.</p></div> </footer> </div> 
+			
+			<script>
+				{
+					
+					__sveltekit_1ifov5r = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.DIkyK-ua.js"),
+						import("../_app/immutable/entry/app.DN3tOuzR.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
